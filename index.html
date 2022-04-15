@@ -1,0 +1,126 @@
+<html>
+  <head>
+    <title>formulaire d'inscription</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <script>
+    function blink (a) {
+      if (a.style.visibility === "visible"){
+          a.style.visibility = "hidden";
+      }
+      else {
+          a.style.visibility = "visible";
+      }
+  }
+  setInterval ("blink(x)", 500); 
+</script>
+<script>
+        function terminer (formulaire){
+            if (formulaire.chek.checked == true ) {
+                formulaire.sub.disabled = false 
+            }
+            if (formulaire.chek.checked == false ) {
+                formulaire.sub.disabled = true 
+            }
+        }
+  
+</script>
+  </head>
+
+  <body>
+    <h1 id="x">Remplir votre formulaire </h1>
+    <form action="formulaire">
+      <fieldset>
+        <legend>vos informations</legend>
+        <table>
+          <tr>
+            <td><label for="n"> Nom de famille </label></td>
+            <td><input type="text" name="n1" id="n" /></td>
+          </tr>
+          <tr>
+            <td><label for="p"> Prénom</label></td>
+            <td><input type="text" name="p1" id="p" /></td>
+          </tr>
+          <tr>
+            <td><label for="d"> Date de naissance</label></td>
+            <td><input type="date" name="d1" id="d" /></td>
+          </tr>
+          <tr>
+            <td >
+                
+                    <input id="fe" type="radio" name="sex" value="femme"/>
+                    <label for="win">femme</label>
+            </td>
+            <td>
+                    <input id="ho" type="radio" name="sex" value="homme" />
+                    <label for="lin">homme</label>
+                  
+            </td>
+          </tr>
+          <tr>
+            <td><label for="ps"> Pseudo-Name</label></td>
+            <td><input type="text" name="ps1" id="ps" /></td>
+          </tr>
+          <tr>
+            <td><label for="e"> Entre votre email</label></td>
+            <td><input type="email" name="e1" id="e" /></td>
+          </tr>
+          <tr>
+            <td><label for="mp"> Mot de passe</label></td>
+            <td><input type="password" name="mp1" id="mp" /></td>
+          </tr>
+          <tr>
+            <td><label for="cps"> comfirmer votre mot de passe </label></td>
+            <td><input type="password" name="cps1" id="cps" /></td>
+          </tr>
+          <tr>
+            <td><label for="fi"> Ajouter votre photo </label></td>
+            <td><input type="file" name="fi1" id="fi" value=" /*image" /></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <textarea cols="30" rows="10">
+Il faut remplir le formulaire puis cliquez sur vérifiez vos informations avant de s'inscrire 
+  Merci </textarea
+              >
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <label for="ch">Vérification est terminée</label>
+              <input
+                type="checkbox"
+                name="chek"
+                id="ch"
+                onclick = "terminer (this.form)"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="reset"
+                name="reset1"
+                id="efs"
+                value="Effacer les saisies"
+              />
+            </td>
+            <td>
+              <input type="submit" name="sub" value="Inscription" disabled />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              <button name="affiche" onclick="afficher()">
+                Afficher vos données avant de valider
+              </button>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+    <script src="./js/FONC.js"></script>
+  </body>
+</html>
